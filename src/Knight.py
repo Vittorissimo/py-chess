@@ -2,4 +2,5 @@ import ChessPiece
 
 class Knight(ChessPiece):
     def __init__(self):
-        pass
+        self.move_a = 1
+        self.move_b = 2
