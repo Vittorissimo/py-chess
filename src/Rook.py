@@ -2,4 +2,4 @@ import ChessPiece
 
 class Rook(ChessPiece):
     def __init__(self):
-        pass
+        self.max_move = 9
