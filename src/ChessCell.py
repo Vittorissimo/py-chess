@@ -1,6 +1,6 @@
-class EmptyCell:
-    def __init__(self, chess_piece):
-        self.cp = chess_piece
+class ChessCell:
+    def __init__(self):
+        self._chess_piece = None
     
     def is_free(self):
         if(self.cp == None):
@@ -19,3 +19,6 @@ class EmptyCell:
             return True
         else:
             return False
+    
+    def set_piece(self, piece):
+        pass
