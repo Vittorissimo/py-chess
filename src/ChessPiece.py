@@ -1,6 +1,12 @@
+import Status
+
 class ChessPiece:
     def __init__(self, color):
-        pass
+        self.color = color
+        self.status = Status.alive
 
-    def movement(self):
-        pass
+    def get_color(self):
+        return self.color
+    
+    def get_status(self):
+        return self.status
