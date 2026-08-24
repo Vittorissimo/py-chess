@@ -1,2 +1,5 @@
+import Grid
+
 class GameChess:
-    pass
+    def __init__(self):
+        self.grid = Grid()
