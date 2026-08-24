@@ -3,22 +3,22 @@ class ChessCell:
         self._chess_piece = None
     
     def is_free(self):
-        if(self.cp == None):
+        if(self._chess_piece == None):
             return True
         else:
             return False
 
     def is_black(self):
-        if(self.cp.Color.back):
+        if(self._chess_piece.Color.back):
             return True
         else:
             return False
 
     def is_white(self):
-        if(self.cp.Color.white):
+        if(self._chess_piece.Color.white):
             return True
         else:
             return False
     
     def set_piece(self, piece):
-        pass
+        self._chess_piece = piece
