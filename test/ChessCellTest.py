@@ -1,4 +1,4 @@
-import ChessCell
+from src.chessGame.ChessCell import ChessCell
 import unittest
 
 class ChessCellTest(unittest.TestCase):
