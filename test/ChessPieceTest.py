@@ -1,5 +1,6 @@
 from src.chessGame.ChessPiece import ChessPiece
 from src.chessGame.Color import Color
+from src.chessGame.Status import Status
 import unittest
 
 class ChessPieceTest(unittest.TestCase):

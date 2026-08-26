@@ -1,4 +1,4 @@
-import Status
+from src.chessGame.Status import Status
 
 class ChessPiece:
     def __init__(self, color):
