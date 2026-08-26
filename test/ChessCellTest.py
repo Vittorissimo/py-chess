@@ -14,3 +14,9 @@ class ChessCellTest(unittest.TestCase):
         self.assertEqual(c.is_black(), False)
         c.set_piece(Color.black)
         self.assertEquals(c.is_black(), True)
+    
+    def test_is_white(self):
+        c = ChessCell()
+        self.assertEqual(c.is_white(), False)
+        c.set_piece(Color.white)
+        self.assertEquals(c.is_white(), True)
