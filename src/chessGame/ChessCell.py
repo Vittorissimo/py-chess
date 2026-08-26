@@ -9,8 +9,11 @@ class ChessCell:
             return False
 
     def is_black(self):
-        if(self._chess_piece.Color.back):
-            return True
+        if(self.is_free()):
+            if(self._chess_piece.Color.back):
+                return True
+            else:
+                return False
         else:
             return False
 
