@@ -13,3 +13,10 @@ class ChessPiece:
     
     def _set_color(self, color):
         self._color = color
+    
+    def change_state(self):
+        match self.status:
+            case Status.alive:
+                self.status = Status.dead
+            case Status.dead:
+                self.status = Status.alive
