@@ -9,3 +9,9 @@ class ChessPieceTest(unittest.TestCase):
         self.assertEqual(c1.get_color(), Color.white)
         c2 = ChessPiece(Color.black)
         self.assertEqual(c2.get_color(), Color.black)
+    
+    def test_get_status(self):
+        c1 = ChessPiece(Color.white)
+        self.assertEqual(c1.get_status(), Status.alive)
+        c2 = ChessPiece(Color.white)
+        self.assertEqual(c2.get_status(), Status.dead)
