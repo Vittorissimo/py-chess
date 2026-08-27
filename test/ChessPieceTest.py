@@ -13,5 +13,13 @@ class ChessPieceTest(unittest.TestCase):
     def test_get_status(self):
         c1 = ChessPiece(Color.white)
         self.assertEqual(c1.get_status(), Status.alive)
-        c2 = ChessPiece(Color.white)
-        self.assertEqual(c2.get_status(), Status.dead)
+        c1.change_state()
+        self.assertEqual(c1.get_status(), Status.dead)
+    
+    def test_change_state(self):
+        c1 = ChessPiece(Color.white)
+        self.assertEqual(c1.get_status(), Status.alive)
+        c1.change_state()
+        self.assertEqual(c1.get_status(), Status.dead)
+        c1.change_state()
+        self.assertEqual(c1.get_status(), Status.alive)
