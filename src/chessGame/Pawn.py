@@ -1,8 +1,9 @@
 import ChessPiece
 
 class Pawn(ChessPiece):
-    def __init__(self):
-        self.max_move = 2
+    def __init__(self, color):
+        super().__init__(color)
+        self.first_move = True
     
-    def get_max_move(self):
-        return self.max_move
+    def get_first_move(self):
+        return self.first_move
