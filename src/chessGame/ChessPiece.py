@@ -2,7 +2,7 @@ from src.chessGame.Status import Status
 
 class ChessPiece:
     def __init__(self, color):
-        self._color = self._set_color(color)
+        self._set_color(color)
         self.status = Status.alive
 
     def get_color(self):
