@@ -4,7 +4,9 @@ from src.chessGame.Color import Color
 class ChessPiece:
     def __init__(self, color):
         self._set_color(color)
-        self._status = Status.alive
+        self._set_state()
+        self._fisible_set = []
+        self._cell = ()
 
     def is_white(self):
         if(self._color == Color.white):
@@ -38,3 +40,13 @@ class ChessPiece:
     
     def kill(self):
         self._status = Status.dead
+    
+    def compute_fisible_set(self):
+        pass
+
+    def get_fisible_set(self, grid):
+        for row in range(self._row_column):
+            for column in range(self._row_column):
+                self._fisible_set[row, column] = grid[row, column]
+        
+        return self._fisible_set
