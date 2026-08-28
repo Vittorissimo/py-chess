@@ -1,4 +1,4 @@
-import ChessPiece
+import chessGame.pieces.ChessPiece as ChessPiece
 
 class Knight(ChessPiece):
     def __init__(self):

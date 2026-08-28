@@ -1,9 +1,7 @@
 import numpy as np
-import ChessCellTest
 
 def main():
-    c = ChessCellTest()
-    c.is_free_test()
+    print("Hello World!!!!!")
 
 if __name__ == '__main__':
     main()

@@ -43,3 +43,6 @@ class ChessPiece:
 
     def get_fisible_set(self):        
         return self._fisible_set
+    
+    def get_cell(self):
+        return self._cell

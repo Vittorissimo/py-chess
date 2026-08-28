@@ -1,4 +1,4 @@
-from src.chessGame.ChessPiece import ChessPiece
+from chessGame.pieces.ChessPiece import ChessPiece
 
 class Player:
     pass
