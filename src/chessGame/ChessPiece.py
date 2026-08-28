@@ -4,9 +4,9 @@ from src.chessGame.Color import Color
 class ChessPiece:
     def __init__(self, color):
         self._set_color(color)
-        self._set_state()
-        self._fisible_set = []
+        self._fisible_set = {}
         self._cell = ()
+        self._status = Status.alive
 
     def is_white(self):
         if(self._color == Color.white):
@@ -35,18 +35,11 @@ class ChessPiece:
     def _set_color(self, color):
         self._color = color
     
-    def _set_state(self):
-        self._status = Status.alive
-    
     def kill(self):
         self._status = Status.dead
     
-    def compute_fisible_set(self):
+    def compute_fisible_set(self, grid):
         pass
 
-    def get_fisible_set(self, grid):
-        for row in range(self._row_column):
-            for column in range(self._row_column):
-                self._fisible_set[row, column] = grid[row, column]
-        
+    def get_fisible_set(self):        
         return self._fisible_set
