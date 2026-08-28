@@ -4,7 +4,7 @@ from src.chessGame.Color import Color
 class ChessPiece:
     def __init__(self, color):
         self._set_color(color)
-        self.status = Status.alive
+        self._status = Status.alive
 
     def is_white(self):
         if(self._color == Color.white):
@@ -19,13 +19,13 @@ class ChessPiece:
             return False
     
     def is_alive(self):
-        if(self.status == Status.alive):
+        if(self._status == Status.alive):
             return True
         else:
             return False
     
     def is_dead(self):
-        if(self.status == Status.dead):
+        if(self._status == Status.dead):
             return True
         else:
             return False
