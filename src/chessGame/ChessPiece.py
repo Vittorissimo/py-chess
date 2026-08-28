@@ -18,8 +18,17 @@ class ChessPiece:
         else:
             return False
     
-    def get_status(self):
-        return self.status
+    def is_alive(self):
+        if(self.status == Status.alive):
+            return True
+        else:
+            return False
+    
+    def is_dead(self):
+        if(self.status == Status.dead):
+            return True
+        else:
+            return False
     
     def _set_color(self, color):
         self._color = color
