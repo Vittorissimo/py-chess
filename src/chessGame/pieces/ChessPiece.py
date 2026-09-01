@@ -38,7 +38,7 @@ class ChessPiece:
     def kill(self):
         self._status = Status.dead
     
-    def compute_fisible_set(self, grid):
+    def compute_fisible_set(self, board):
         pass
 
     def get_fisible_set(self):        
