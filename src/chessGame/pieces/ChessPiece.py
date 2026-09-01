@@ -1,5 +1,5 @@
-from src.chessGame.Status import Status
-from src.chessGame.Color import Color
+from chessGame.utils.Status import Status
+from chessGame.utils.Color import Color
 
 class ChessPiece:
     def __init__(self, color):
