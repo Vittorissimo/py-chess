@@ -1,4 +1,5 @@
 import numpy as np
+from chessGame.pieces.ChessPiece import ChessPiece
 
 class ChessBoard:
     def __init__(self):
@@ -17,3 +18,7 @@ class ChessBoard:
 
     def get_raw_grid(self):
         return self._matrix
+    
+    def set_raw_grid(self, pos: tuple, piece: ChessPiece):
+        if(((pos[0] <= 7) and (pos[0] >= 0) and (pos[1] <= 7) and (pos[1] >= 0))):
+            self._matrix[pos] = piece
