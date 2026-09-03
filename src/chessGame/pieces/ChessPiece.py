@@ -20,6 +20,9 @@ class ChessPiece:
         else:
             return False
     
+    def get_color(self):
+        return self._color
+    
     def is_alive(self):
         if(self._status == Status.alive):
             return True
