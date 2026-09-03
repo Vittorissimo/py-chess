@@ -14,3 +14,6 @@ class ChessBoard:
     def set_cell(self, column, row, piece):
         if((row <= 8) or (row >= 1)):
             self._matrix[8 - row, self.letter_dictionary[column]] = piece
+
+    def get_raw_grid(self):
+        return self._matrix
