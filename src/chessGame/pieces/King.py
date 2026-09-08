@@ -11,8 +11,6 @@ class King(ChessPiece):
         self._feasible_set.clear()
         grid_matrix     = board.get_raw_grid()
 
-        # cicla i e j per riga e colonna
-        # nella matrice grezza (grid_matrix)
         si, sj = self._cell[0], self._cell[1]
         for i in range(3):
             for j in range(3):
@@ -21,7 +19,6 @@ class King(ChessPiece):
                     if ((i_d >= 0 and j_d >= 0) and (i_d <= 7 and j_d <= 7)):
                         self._feasible_set.append((i_d, j_d))
 
-        # nemici e amici
         for i in self._feasible_set:
             if(grid_matrix[i] != None):
                 if(self._color == (grid_matrix[i].get_color())):
