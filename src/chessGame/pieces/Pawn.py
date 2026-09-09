@@ -21,8 +21,17 @@ class Pawn(ChessPiece):
                 
         else:
             self._feasible_set.append((si + 1), sj)
+        
+        self.eat(si, sj, board)
 
         for i in self._feasible_set:
             if(grid_matrix[i] != None):
                 if(self._color == (grid_matrix[i].get_color())):
                     self._feasible_set.remove(i)
+    
+    def eat(self, si, sj, board: ChessBoard):
+        if (board((si + 1)(sj + 1)) != None) and (self._color != board[(si + 1, sj + 1)]):
+            self._feasible_set.append((si + 1, sj + 1))
+        
+        if (board((si + 1)(sj - 1)) != None) and (self._color != board[(si + 1, sj - 1)]):
+            self._feasible_set.append((si + 1, sj - 1))
