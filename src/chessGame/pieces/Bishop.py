@@ -28,23 +28,26 @@ class Bishop(ChessPiece):
 
         si, sj = self._cell[0], self._cell[1]
         for i in range(8):
-            if (i != si and i != sj):
-                self._feasible_set.append((si + i, sj + i))
+            if(((si + i) <= 7) and ((sj + i) <= 7) and (i != 0)):
+                if (i != si and i != sj):
+                    self._feasible_set.append((si + i, sj + i))
         
         for i in range(8):
-            if (i != si and i != sj):
-                self._feasible_set.append((si - i, sj - i))
+            if(((si - i) >= 0) and ((sj - i) >= 0) and (i != 0)):
+                if (i != si and i != sj):
+                    self._feasible_set.append((si - i, sj - i))
         
         for i in range(8):
-            if (i != si and i != sj):
-                self._feasible_set.append((si + i, sj - i))
+            if(((si + i) <= 7) and ((sj - i) >= 0) and (i != 0)):
+                if (i != si and i != sj):
+                    self._feasible_set.append((si + i, sj - i))
         
         for i in range(8):
-            # if()
-            if (i != si and i != sj):
-                self._feasible_set.append((si - i, sj + i))
+            if(((si - i) >= 0) and ((sj + i) <= 7) and (i != 0)):
+                if (i != si and i != sj):
+                    self._feasible_set.append((si - i, sj + i))
         
-        for i in self._feasible_set:
-            if(grid_matrix[i] != None):
-                if(self._color == (grid_matrix[i].get_color())):
-                    self._feasible_set.remove(i)
+        # for i in self._feasible_set:
+        #     if(grid_matrix[i] != None):
+        #         if(self._color == (grid_matrix[i].get_color())):
+        #             self._feasible_set.remove(i)
