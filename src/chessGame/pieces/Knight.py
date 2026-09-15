@@ -40,3 +40,9 @@ class Knight(ChessPiece):
         ]
 
         self._feasible_set = [(x, y) for x, y in moves if 0 <= x < 8 and 0 <= y < 8]
+        copy_list = self._feasible_set
+
+        for i in copy_list:
+            if(grid_matrix[i] != None):
+                if(self._color == (grid_matrix[i].get_color())):
+                    self._feasible_set.remove(i)
