@@ -3,6 +3,7 @@ from chessGame.pieces.Rook import Rook
 from chessGame.pieces.Bishop import Bishop
 from chessGame.pieces.Pawn import Pawn
 from chessGame.pieces.Queen import Queen
+from chessGame.pieces.Knight import Knight
 from chessGame.utils.Color import Color
 from chessGame.ChessBoard import ChessBoard
 import numpy as np
@@ -68,11 +69,25 @@ class PieceTest(unittest.TestCase):
 
 
         #Queen
-        q = Queen(Color.white)
-        q.move((3, 3))
-        q.compute_feasible_set(board)
-        print(q.get_feasible_set())
+        # q = Queen(Color.white)
+        # q.move((3, 3))
+        # q.compute_feasible_set(board)
+        # print(q.get_feasible_set())
 
+        # Knight
+        k = Knight(Color.white, 1)
+        k.move((3, 3))
+        board.set_raw_grid((3, 3), k)
+        b = Bishop(Color.white, 1)
+        b.move((5, 4))
+        board.set_raw_grid((5, 4), b)
+        k.compute_feasible_set(board)
+        print(k.get_feasible_set())
+        b2 = Bishop(Color.white, 1)
+        b2.move((2, 1))
+        board.set_raw_grid((2, 1), b2)
+        k.compute_feasible_set(board)
+        print(k.get_feasible_set())
 
         
 
