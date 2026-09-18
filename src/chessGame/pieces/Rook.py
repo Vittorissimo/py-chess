@@ -33,10 +33,10 @@ class Rook(ChessPiece):
             if (grid_matrix[si, j] is None):
                 self._feasible_set.append((si, j))
             else:
-                if (grid_matrix[si, j].get_color() != self._set_color):
+                if (grid_matrix[si, j].get_color() == self._set_color):
                     print(self._color)
-                    print("Colore pezzo:", grid_matrix[i, sj].get_color())
-                    print("Sono uguali:", self._color == grid_matrix[i, sj].get_color())
+                    print("Colore pezzo:", grid_matrix[si, j].get_color())
+                    print("Sono uguali:", self._color == grid_matrix[si, j].get_color())
                     self._feasible_set.append((si, j))
                 break
         
@@ -45,7 +45,7 @@ class Rook(ChessPiece):
             if (grid_matrix[si, j] is None):
                 self._feasible_set.append((si, j))
             else:
-                if (grid_matrix[si, j].get_color() != self._set_color):
+                if (grid_matrix[si, j].get_color() == self._set_color):
                     self._feasible_set.append((si, j))
                 break
         
@@ -54,7 +54,7 @@ class Rook(ChessPiece):
             if (grid_matrix[i, sj] is None):
                 self._feasible_set.append((i, sj))
             else:
-                if (grid_matrix[i, sj].get_color() != self._set_color):
+                if (grid_matrix[i, sj].get_color() == self._set_color):
                     self._feasible_set.append((i, sj))
                 break
         
@@ -63,6 +63,6 @@ class Rook(ChessPiece):
             if (grid_matrix[i, sj] is None):
                 self._feasible_set.append((i, sj))
             else:
-                if (grid_matrix[i, sj].get_color() != self._set_color):
+                if (grid_matrix[i, sj].get_color() == self._set_color):
                     self._feasible_set.append((i, sj))
                 break
