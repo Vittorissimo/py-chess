@@ -27,23 +27,62 @@ class Bishop(ChessPiece):
         grid_matrix = board.get_raw_grid()
 
         si, sj = self._cell[0], self._cell[1]
-        for i in range(8):
-            if(((si + i) <= 7) and ((sj + i) <= 7) and (i != 0)):
-                self._feasible_set.append((si + i, sj + i))
-        
-        for i in range(8):
-            if(((si - i) >= 0) and ((sj - i) >= 0) and (i != 0)):
-                self._feasible_set.append((si - i, sj - i))
-        
-        for i in range(8):
-            if(((si + i) <= 7) and ((sj - i) >= 0) and (i != 0)):
-                self._feasible_set.append((si + i, sj - i))
-        
-        for i in range(8):
-            if(((si - i) >= 0) and ((sj + i) <= 7) and (i != 0)):
-                self._feasible_set.append((si - i, sj + i))
-        
-        # for i in self._feasible_set:
-        #     if(grid_matrix[i] != None):
-        #         if(self._color == (grid_matrix[i].get_color())):
-        #             self._feasible_set.remove(i)
+        # Right + Under
+        for i in range(1, 8):
+            x = si + i
+            y = sj + i
+
+            if x >= 8 or y >= 8:
+                break
+
+            if grid_matrix[x, y] is None:
+                self._feasible_set.append((x, y))
+            else:
+                if grid_matrix[x, y].get_color() != self._color:
+                    self._feasible_set.append((x, y))
+                break
+
+        # Left + Under
+        for i in range(1, 8):
+            x = si + i
+            y = sj - i
+
+            if x >= 8 or y < 0:
+                break
+
+            if grid_matrix[x, y] is None:
+                self._feasible_set.append((x, y))
+            else:
+                if grid_matrix[x, y].get_color() != self._color:
+                    self._feasible_set.append((x, y))
+                break
+
+        # Right + Up
+        for i in range(1, 8):
+            x = si - i
+            y = sj + i
+
+            if x < 0 or y >= 8:
+                break
+
+            if grid_matrix[x, y] is None:
+                self._feasible_set.append((x, y))
+            else:
+                if grid_matrix[x, y].get_color() != self._color:
+                    self._feasible_set.append((x, y))
+                break
+
+        # Left + Up
+        for i in range(1, 8):
+            x = si - i
+            y = sj - i
+
+            if x < 0 or y < 0:
+                break
+
+            if grid_matrix[x, y] is None:
+                self._feasible_set.append((x, y))
+            else:
+                if grid_matrix[x, y].get_color() != self._color:
+                    self._feasible_set.append((x, y))
+                break
