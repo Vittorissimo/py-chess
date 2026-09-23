@@ -32,13 +32,13 @@ class Bishop(ChessPiece):
             x = si + i
             y = sj + i
 
-            if x >= 8 or y >= 8:
+            if (x >= 8 or y >= 8):
                 break
 
-            if grid_matrix[x, y] is None:
+            if (grid_matrix[x, y] is None):
                 self._feasible_set.append((x, y))
             else:
-                if grid_matrix[x, y].get_color() != self._color:
+                if (grid_matrix[x, y].get_color() != self._color):
                     self._feasible_set.append((x, y))
                 break
 
@@ -47,13 +47,13 @@ class Bishop(ChessPiece):
             x = si + i
             y = sj - i
 
-            if x >= 8 or y < 0:
+            if (x >= 8 or y < 0):
                 break
 
-            if grid_matrix[x, y] is None:
+            if (grid_matrix[x, y] is None):
                 self._feasible_set.append((x, y))
             else:
-                if grid_matrix[x, y].get_color() != self._color:
+                if (grid_matrix[x, y].get_color() != self._color):
                     self._feasible_set.append((x, y))
                 break
 
@@ -62,13 +62,13 @@ class Bishop(ChessPiece):
             x = si - i
             y = sj + i
 
-            if x < 0 or y >= 8:
+            if (x < 0 or y >= 8):
                 break
 
-            if grid_matrix[x, y] is None:
+            if (grid_matrix[x, y] is None):
                 self._feasible_set.append((x, y))
             else:
-                if grid_matrix[x, y].get_color() != self._color:
+                if (grid_matrix[x, y].get_color() != self._color):
                     self._feasible_set.append((x, y))
                 break
 
@@ -77,12 +77,12 @@ class Bishop(ChessPiece):
             x = si - i
             y = sj - i
 
-            if x < 0 or y < 0:
+            if (x < 0 or y < 0):
                 break
 
-            if grid_matrix[x, y] is None:
+            if (grid_matrix[x, y] is None):
                 self._feasible_set.append((x, y))
             else:
-                if grid_matrix[x, y].get_color() != self._color:
+                if (grid_matrix[x, y].get_color() != self._color):
                     self._feasible_set.append((x, y))
                 break
