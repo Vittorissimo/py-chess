@@ -1,4 +1,8 @@
 from chessGame.pieces.ChessPiece import ChessPiece
 
 class Player:
-    pass
+    def __init__(self):
+        self.pieces = []
+
+    def get_pieces(self):
+        return self.pieces
