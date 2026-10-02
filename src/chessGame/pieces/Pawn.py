@@ -3,9 +3,10 @@ from chessGame.ChessBoard import ChessBoard
 from chessGame.utils.Color import Color
 
 class Pawn(ChessPiece):
-    def __init__(self, color):
+    def __init__(self, color, value):
         super().__init__(color)
         self.first_move = True
+        self._cell = self.set_cell(value)
     
     def move(self, cell_move : tuple):
         self._cell = cell_move
@@ -62,4 +63,10 @@ class Pawn(ChessPiece):
             if(grid_matrix[i] != None):
                 if(self._color == (grid_matrix[i].get_color())):
                     self._feasible_set.remove(i)
+        
+    def set_cell(self, value):
+        if(self._color == Color.white):
+            self._cell = (6, value - 1)
+        else:
+            self._cell = (1, value - 1)
     
