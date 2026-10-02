@@ -18,4 +18,7 @@ class Player:
     def remove_piece(self, piece):
         self.pieces.remove(piece)
     
-    
+    def control_pieces(self):
+        for i in range(self.pieces):
+            if(not(self.pieces[i].is_alive())):
+                self.remove_piece(i)
