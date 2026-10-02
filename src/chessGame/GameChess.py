@@ -12,10 +12,18 @@ class GameChess:
         i = 0
         while(self.flag):
             if(i %2 == 0):
-                self._player1
+                for p in range(self._player1.get_pieces()):
+                    qm = len(p.get_pieces())
+                
+                if qm == 0:
+                    self.flag = False
                 # white move
             else:
-                self._player2
+                for p in range(self._player2.get_pieces()):
+                    qm = len(p.get_pieces())
+                
+                if qm == 0:
+                    self.flag = False
                 # black move
             
             i += 1
