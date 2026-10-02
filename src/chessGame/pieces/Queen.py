@@ -1,9 +1,11 @@
 from chessGame.pieces.ChessPiece import ChessPiece
 from chessGame.ChessBoard import ChessBoard
+from chessGame.utils.Color import Color
 
 class Queen(ChessPiece):
     def __init__(self, color):
         super().__init__(color)
+        self._cell = self.set_cell()
     
     def compute_feasible_set(self, board: ChessBoard):
         self._feasible_set.clear()
@@ -111,3 +113,9 @@ class Queen(ChessPiece):
     
     def move(self, cell_move : tuple):
         self._cell = cell_move
+    
+    def set_cell(self):
+        if(self._color == Color.white):
+            self._cell = (7, 3)
+        else:
+            self._cell = (0, 3)
